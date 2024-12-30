@@ -1,4 +1,4 @@
-# Customer Salary Prediction Streamlit App
+# Customer Salary Prediction ANN App
 
 ## Table of Contents
 - [About The Project](#about-the-project)
@@ -17,15 +17,15 @@
 
 ## About The Project
 
-The **Bank Customer Salary Prediction** app uses deep learning to predict whether a bank customer will churn (leave the bank) or not, based on their demographic and account-related information. The app is powered by a deep learning ANN model that analyzes various features such as customer age, account balance, credit score, and services availed by the customer. Built with TensorFlow for the model and Streamlit for the front-end web application, the app offers an interactive interface to predict customer salary in real-time.
+The **Bank Customer Salary Prediction** app uses deep learning to predict the estimated annual salary of a bank customer based on their demographic and account-related information. The app is powered by a deep learning Artificial Neural Network (ANN) Regression model that analyzes various features such as customer age, account balance, credit score, and services availed by the customer. Built with TensorFlow for the model and Streamlit for the front-end web application, the app offers an interactive interface to predict customer salary in real-time.
 
-The app allows users to input a customer's data and instantly receive a prediction of the estimated salary. The project also includes preprocessing steps like encoding categorical variables and scaling numerical inputs.
+The app allows users to input a customer's data and instantly receive a prediction of their estimated salary. The project also includes preprocessing steps like encoding categorical variables and scaling numerical inputs.
 
-![churn-prediction](churn-prediction.png)
+![salary](salary.png)
 
 ## About the Data
 
-This dataset contains details of bank customers, and it is used to predict customer churn. The dataset is based on a sample of bank customers and contains various demographic and account-related features. It has been cleaned and processed for machine learning applications. The target variable, `Exited`, indicates whether the customer has left the bank (`1` for churn, `0` for no churn).
+This dataset contains details of bank customers, and it is used to predict the estimated salary of each customer. The dataset is based on a sample of bank customers and contains various demographic and account-related features. It has been cleaned and processed for machine learning applications. The target variable, `EstimatedSalary`, represents the predicted salary of each customer.
 
 ### Key Features:
 - **CustomerId**: Unique identifier for each customer
@@ -39,14 +39,12 @@ This dataset contains details of bank customers, and it is used to predict custo
 - **NumOfProducts**: Number of products the customer is using (e.g., checking account, savings account)
 - **HasCrCard**: Whether the customer has a credit card or not
 - **IsActiveMember**: Whether the customer is an active member or not
-- **EstimatedSalary**: Estimated annual salary of the customer
-- **Exited**: The target variable (1 if the customer has exited, 0 if the customer stayed)
+- **EstimatedSalary**: The target variable (Estimated annual salary of the customer)
 
 ## Target Variable
 
-The **target variable** is `Exited`, which represents whether the customer has churned (left the bank) or not. It is a binary classification task, with:
-- `1` indicating the customer has churned,
-- `0` indicating the customer has stayed.
+The **target variable** is `EstimatedSalary`, which represents the predicted salary of the customer. This is a regression task, where the model aims to predict a continuous value, the estimated salary of the customer based on the provided features.
+
 
 ## Dataset Source Link
 
@@ -118,12 +116,12 @@ To get started with this project locally, you’ll need Python 3.8+ installed on
 
 1. Pull the Docker image from DockerHub (if available):
     ```bash
-    docker pull shubhamprajapati7748/churn-prediction-app
+    docker pull shubhamprajapati7748/salary-prediction-app:latest
     ```
 
 2. Run the app inside the container:
     ```bash
-    docker run -p 8501:8501 shubhamprajapati7748/churn-prediction-app
+    docker run -p 8501:8501 shubhamprajapati7748/salary-prediction-app:latest
     ```
 
 3. Visit `http://localhost:8501` in your browser to use the app.
